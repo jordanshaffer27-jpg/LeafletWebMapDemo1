@@ -1,10 +1,6 @@
-
-var map = L.map('earthquakemap').setView([38, -95], 4);
-
-// Basemap
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap'
-}).addTo(map);
+var map = L.map('earthquakemap').setView([39, -98], 4);
+var basemapUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}';
+var basemap = L.tileLayer(basemapUrl, { attribution: 'Tiles &copy; Esri, OpenStreetMap contributors', maxZoom: 16}).addTo(map);
 
 // Earthquake colors
 function getColor(mag) {
